@@ -217,7 +217,7 @@ of the object should _not_ be updated."
               (attach-object robot-object obj link-name)))))
 
 (defmethod initialize-instance :after ((robot-object robot-object)
-                                       &key color name pose
+                                       &key (color '(0.0 0.0 0.0 1.0)) name pose
                                          (collision-group :character-filter)
                                          (collision-mask '(:default-filter :static-filter)))
   (with-slots (rigid-bodies links urdf pose-reference-body) robot-object
